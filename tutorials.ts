@@ -1,0 +1,451 @@
+
+import { Tutorial } from './tutorial-types';
+
+export const TUTORIAL_CATEGORIES = {
+  GETTING_STARTED: 'Getting Started',
+  CRM_BASICS: 'CRM Basics',
+  SALES_PROCESS: 'Sales Process',
+  DOCUMENT_MANAGEMENT: 'Document Management',
+  ADVANCED_FEATURES: 'Advanced Features',
+} as const;
+
+export const tutorials: Tutorial[] = [
+  {
+    id: 'dashboard',
+    title: 'Dashboard Overview',
+    description: 'Learn how to navigate and use the main dashboard to monitor your solar business performance.',
+    category: TUTORIAL_CATEGORIES.GETTING_STARTED,
+    icon: 'LayoutDashboard',
+    estimatedTime: '3 mins',
+    difficulty: 'beginner',
+    isActive: true,
+    tags: ['dashboard', 'overview', 'navigation'],
+    steps: [
+      {
+        id: 'dashboard-welcome',
+        title: 'Welcome to Your Dashboard',
+        description: 'This is your main dashboard where you can see an overview of your solar business performance, recent activities, and key metrics.',
+        targetElementId: 'dashboard-main',
+        position: 'center',
+      },
+      {
+        id: 'dashboard-stats',
+        title: 'Key Performance Metrics',
+        description: 'These cards show your key business metrics including total deals, revenue, conversion rates, and monthly performance.',
+        targetElementId: 'dashboard-stats',
+        position: 'bottom',
+      },
+      {
+        id: 'dashboard-charts',
+        title: 'Performance Charts',
+        description: 'View your sales trends, revenue growth, and deal pipeline through interactive charts and graphs.',
+        targetElementId: 'dashboard-charts',
+        position: 'top',
+      },
+      {
+        id: 'dashboard-activities',
+        title: 'Recent Activities',
+        description: 'Stay updated with the latest activities, recent deals, upcoming tasks, and important notifications.',
+        targetElementId: 'dashboard-activities',
+        position: 'left',
+      },
+    ],
+  },
+  {
+    id: 'contacts',
+    title: 'Contact Management',
+    description: 'Master contact management to build and maintain relationships with leads, customers, and vendors.',
+    category: TUTORIAL_CATEGORIES.CRM_BASICS,
+    icon: 'Users',
+    estimatedTime: '5 mins',
+    difficulty: 'beginner',
+    isActive: true,
+    tags: ['contacts', 'leads', 'customers'],
+    steps: [
+      {
+        id: 'contacts-overview',
+        title: 'Your Contact Database',
+        description: 'This is where you manage all your contacts including leads, customers, and vendors. You can search, filter, and organize your contacts efficiently.',
+        targetElementId: 'contacts-table',
+        position: 'top',
+      },
+      {
+        id: 'contacts-add',
+        title: 'Adding New Contacts',
+        description: 'Click this button to add new contacts to your database. You can import from various sources or add them manually.',
+        targetElementId: 'add-contact-button',
+        position: 'bottom',
+        action: 'click',
+      },
+      {
+        id: 'contacts-search',
+        title: 'Search and Filter',
+        description: 'Use the search bar and filters to quickly find specific contacts based on name, company, contact type, or other criteria.',
+        targetElementId: 'contacts-search',
+        position: 'bottom',
+      },
+      {
+        id: 'contacts-actions',
+        title: 'Contact Actions',
+        description: 'For each contact, you can view details, edit information, create deals, schedule appointments, or add tasks.',
+        targetElementId: 'contacts-actions',
+        position: 'left',
+      },
+    ],
+  },
+  {
+    id: 'deals',
+    title: 'Deal Management',
+    description: 'Learn how to create, track, and manage solar installation deals through your sales pipeline.',
+    category: TUTORIAL_CATEGORIES.SALES_PROCESS,
+    icon: 'Briefcase',
+    estimatedTime: '7 mins',
+    difficulty: 'intermediate',
+    isActive: true,
+    tags: ['deals', 'sales', 'pipeline'],
+    steps: [
+      {
+        id: 'deals-kanban',
+        title: 'Your Sales Pipeline',
+        description: 'The Kanban board shows your deals organized by stage. Drag deals between columns to update their progress through your sales process.',
+        targetElementId: 'deals-kanban',
+        position: 'top',
+      },
+      {
+        id: 'deals-add',
+        title: 'Creating New Deals',
+        description: 'Click here to create a new deal. You can associate it with existing contacts and set important details like value, system size, and expected close date.',
+        targetElementId: 'add-deal-button',
+        position: 'bottom',
+        action: 'click',
+      },
+      {
+        id: 'deals-stages',
+        title: 'Deal Stages',
+        description: 'Each column represents a stage in your sales process. Move deals through stages as they progress from lead to closed-won.',
+        targetElementId: 'deal-stage-lead',
+        position: 'bottom',
+      },
+      {
+        id: 'deals-card',
+        title: 'Deal Information',
+        description: 'Each deal card shows key information like contact name, deal value, system size, and days in current stage. Click to view full details.',
+        targetElementId: 'deal-card-first',
+        position: 'right',
+      },
+    ],
+  },
+  {
+    id: 'calendar',
+    title: 'Calendar & Appointments',
+    description: 'Schedule and manage appointments, site surveys, consultations, and other important events.',
+    category: TUTORIAL_CATEGORIES.CRM_BASICS,
+    icon: 'Calendar',
+    estimatedTime: '4 mins',
+    difficulty: 'beginner',
+    isActive: true,
+    tags: ['calendar', 'appointments', 'scheduling'],
+    steps: [
+      {
+        id: 'calendar-view',
+        title: 'Your Calendar View',
+        description: 'View all your appointments and events in a monthly calendar format. You can switch between month, week, and day views.',
+        targetElementId: 'calendar-main',
+        position: 'top',
+      },
+      {
+        id: 'calendar-add',
+        title: 'Schedule New Appointments',
+        description: 'Click here to schedule new appointments like site surveys, consultations, or contract signings.',
+        targetElementId: 'calendar-add-button',
+        position: 'bottom',
+        action: 'click',
+      },
+      {
+        id: 'calendar-events',
+        title: 'Managing Events',
+        description: 'Click on any event to view details, edit information, or reschedule. Events are color-coded by type for easy identification.',
+        targetElementId: 'calendar-event-first',
+        position: 'right',
+      },
+    ],
+  },
+  {
+    id: 'tasks',
+    title: 'Task Management',
+    description: 'Create, assign, and track tasks to ensure nothing falls through the cracks in your sales process.',
+    category: TUTORIAL_CATEGORIES.CRM_BASICS,
+    icon: 'CheckSquare',
+    estimatedTime: '4 mins',
+    difficulty: 'beginner',
+    isActive: true,
+    tags: ['tasks', 'productivity', 'follow-up'],
+    steps: [
+      {
+        id: 'tasks-overview',
+        title: 'Your Task List',
+        description: 'View all your tasks organized by status. Keep track of what needs to be done, what\'s in progress, and what\'s completed.',
+        targetElementId: 'tasks-list',
+        position: 'top',
+      },
+      {
+        id: 'tasks-create',
+        title: 'Creating Tasks',
+        description: 'Click here to create new tasks. You can assign them to team members, set due dates, and link them to specific deals or contacts.',
+        targetElementId: 'tasks-add-button',
+        position: 'bottom',
+        action: 'click',
+      },
+      {
+        id: 'tasks-priority',
+        title: 'Task Priorities',
+        description: 'Tasks are color-coded by priority. High-priority tasks appear in red, medium in yellow, and low priority in green.',
+        targetElementId: 'tasks-priority',
+        position: 'right',
+      },
+    ],
+  },
+  {
+    id: 'proposals',
+    title: 'Proposal Generation',
+    description: 'Create professional solar proposals with system specifications, pricing, and terms for your customers.',
+    category: TUTORIAL_CATEGORIES.SALES_PROCESS,
+    icon: 'FileText',
+    estimatedTime: '6 mins',
+    difficulty: 'intermediate',
+    isActive: true,
+    tags: ['proposals', 'quotes', 'pricing'],
+    steps: [
+      {
+        id: 'proposals-overview',
+        title: 'Proposal Management',
+        description: 'View all your proposals and their status. Track which proposals have been sent, viewed, accepted, or rejected.',
+        targetElementId: 'proposals-list',
+        position: 'top',
+      },
+      {
+        id: 'proposals-create',
+        title: 'Creating Proposals',
+        description: 'Generate new proposals with system specifications, pricing breakdowns, savings calculations, and professional presentation.',
+        targetElementId: 'proposals-create-button',
+        position: 'bottom',
+        action: 'click',
+      },
+      {
+        id: 'proposals-status',
+        title: 'Tracking Proposal Status',
+        description: 'Monitor proposal lifecycle from draft to acceptance. Get notifications when customers view or respond to proposals.',
+        targetElementId: 'proposals-status',
+        position: 'left',
+      },
+    ],
+  },
+  {
+    id: 'inventory',
+    title: 'Inventory Management',
+    description: 'Track solar panels, inverters, mounting systems, and other equipment to ensure you have what you need for installations.',
+    category: TUTORIAL_CATEGORIES.ADVANCED_FEATURES,
+    icon: 'Package',
+    estimatedTime: '5 mins',
+    difficulty: 'intermediate',
+    isActive: true,
+    tags: ['inventory', 'equipment', 'stock'],
+    steps: [
+      {
+        id: 'inventory-overview',
+        title: 'Equipment Inventory',
+        description: 'Track all your solar equipment including panels, inverters, mounting systems, and other components. Monitor stock levels and costs.',
+        targetElementId: 'inventory-table',
+        position: 'top',
+      },
+      {
+        id: 'inventory-add',
+        title: 'Adding Inventory Items',
+        description: 'Add new equipment to your inventory with details like manufacturer, model, SKU, costs, and stock quantities.',
+        targetElementId: 'inventory-add-button',
+        position: 'bottom',
+        action: 'click',
+      },
+      {
+        id: 'inventory-alerts',
+        title: 'Stock Level Alerts',
+        description: 'Set minimum stock levels to get alerts when inventory is running low. This helps ensure you never run out of critical components.',
+        targetElementId: 'inventory-alerts',
+        position: 'right',
+      },
+    ],
+  },
+  {
+    id: 'reports',
+    title: 'Reports & Analytics',
+    description: 'Generate insightful reports to analyze your business performance, sales trends, and team productivity.',
+    category: TUTORIAL_CATEGORIES.ADVANCED_FEATURES,
+    icon: 'BarChart3',
+    estimatedTime: '5 mins',
+    difficulty: 'intermediate',
+    isActive: true,
+    tags: ['reports', 'analytics', 'performance'],
+    steps: [
+      {
+        id: 'reports-overview',
+        title: 'Business Reports',
+        description: 'Access comprehensive reports covering sales performance, revenue trends, conversion rates, and team productivity.',
+        targetElementId: 'reports-dashboard',
+        position: 'top',
+      },
+      {
+        id: 'reports-filters',
+        title: 'Report Filters',
+        description: 'Customize reports by date range, team member, deal stage, or other criteria to get specific insights you need.',
+        targetElementId: 'reports-filters',
+        position: 'bottom',
+      },
+      {
+        id: 'reports-export',
+        title: 'Exporting Reports',
+        description: 'Export reports to PDF or Excel for sharing with stakeholders or for further analysis outside the system.',
+        targetElementId: 'reports-export',
+        position: 'left',
+      },
+    ],
+  },
+  {
+    id: 'settings',
+    title: 'System Settings',
+    description: 'Customize your CRM settings, user preferences, and system configuration for optimal workflow.',
+    category: TUTORIAL_CATEGORIES.GETTING_STARTED,
+    icon: 'Settings',
+    estimatedTime: '4 mins',
+    difficulty: 'beginner',
+    isActive: true,
+    tags: ['settings', 'preferences', 'configuration'],
+    steps: [
+      {
+        id: 'settings-overview',
+        title: 'Settings Panel',
+        description: 'Configure system-wide settings, user preferences, notification settings, and other customization options.',
+        targetElementId: 'settings-panel',
+        position: 'center',
+      },
+      {
+        id: 'settings-preferences',
+        title: 'User Preferences',
+        description: 'Customize your personal preferences including theme, timezone, date format, and notification settings.',
+        targetElementId: 'settings-preferences',
+        position: 'right',
+      },
+      {
+        id: 'settings-notifications',
+        title: 'Notification Settings',
+        description: 'Control what notifications you receive and how you receive them - email, in-app, or push notifications.',
+        targetElementId: 'settings-notifications',
+        position: 'bottom',
+      },
+    ],
+  },
+  {
+    id: 'profile',
+    title: 'Profile Management',
+    description: 'Manage your user profile, upload photos, and update personal information.',
+    category: TUTORIAL_CATEGORIES.GETTING_STARTED,
+    icon: 'User',
+    estimatedTime: '3 mins',
+    difficulty: 'beginner',
+    isActive: true,
+    tags: ['profile', 'personal', 'photo'],
+    steps: [
+      {
+        id: 'profile-overview',
+        title: 'Your Profile',
+        description: 'View and edit your personal information, contact details, and professional information displayed to your team.',
+        targetElementId: 'profile-form',
+        position: 'center',
+      },
+      {
+        id: 'profile-photo',
+        title: 'Profile Photo',
+        description: 'Upload a professional profile photo that will be displayed in the header and throughout the system.',
+        targetElementId: 'profile-photo-upload',
+        position: 'bottom',
+        action: 'click',
+      },
+      {
+        id: 'profile-save',
+        title: 'Saving Changes',
+        description: 'Don\'t forget to save your changes after updating your profile information.',
+        targetElementId: 'profile-save-button',
+        position: 'bottom',
+      },
+    ],
+  },
+  {
+    id: 'esignatures',
+    title: 'E-Signature Documents',
+    description: 'Upload documents, add signature fields, and send contracts for electronic signature.',
+    category: TUTORIAL_CATEGORIES.DOCUMENT_MANAGEMENT,
+    icon: 'FileSignature',
+    estimatedTime: '8 mins',
+    difficulty: 'advanced',
+    isActive: true,
+    tags: ['esignature', 'documents', 'contracts'],
+    steps: [
+      {
+        id: 'esignatures-overview',
+        title: 'E-Signature Dashboard',
+        description: 'Manage all your e-signature documents in one place. Track document status, signing progress, and completed contracts.',
+        targetElementId: 'esignatures-dashboard',
+        position: 'top',
+      },
+      {
+        id: 'esignatures-upload',
+        title: 'Uploading Documents',
+        description: 'Upload PDF documents that need to be signed. Common documents include contracts, service agreements, and installation permits.',
+        targetElementId: 'esignatures-upload-button',
+        position: 'bottom',
+        action: 'click',
+      },
+      {
+        id: 'esignatures-fields',
+        title: 'Adding Signature Fields',
+        description: 'Add signature fields, date fields, and text fields to your documents. Position them exactly where signatures are needed.',
+        targetElementId: 'esignatures-fields',
+        position: 'right',
+      },
+      {
+        id: 'esignatures-signers',
+        title: 'Managing Signers',
+        description: 'Add signers to your document with their email addresses. You can set signing order and customize email messages.',
+        targetElementId: 'esignatures-signers',
+        position: 'left',
+      },
+      {
+        id: 'esignatures-send',
+        title: 'Sending for Signature',
+        description: 'Send the document to signers via email. They\'ll receive a secure link to sign the document electronically.',
+        targetElementId: 'esignatures-send-button',
+        position: 'bottom',
+      },
+    ],
+  },
+];
+
+export const getTutorialById = (id: string): Tutorial | undefined => {
+  return tutorials.find(tutorial => tutorial.id === id);
+};
+
+export const getTutorialsByCategory = (category: string): Tutorial[] => {
+  return tutorials.filter(tutorial => tutorial.category === category);
+};
+
+export const getActiveTutorials = (): Tutorial[] => {
+  return tutorials.filter(tutorial => tutorial.isActive);
+};
+
+export const searchTutorials = (query: string): Tutorial[] => {
+  const lowercaseQuery = query.toLowerCase();
+  return tutorials.filter(tutorial => 
+    tutorial.title.toLowerCase().includes(lowercaseQuery) ||
+    tutorial.description.toLowerCase().includes(lowercaseQuery) ||
+    tutorial.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
+  );
+};
